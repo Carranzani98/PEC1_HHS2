@@ -5,6 +5,11 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Segoe UI Symbol";
 $font-family-serif: "Georgia", "Times New Roman", serif;
 
+@function newColorInvert($color, $amount: 100%) {
+  $inverse: color.change($color, $hue: color.hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+}
+
 $white: #ffffff;
 $main-color: #3e0a21;
 $main-color-hover: color.scale($main-color, $lightness: 20%);
@@ -13,13 +18,10 @@ $content-background-color: #f1f1f1;
 $menu-background-color-mobile: #dddddd;
 $wave-color: #ffb6b6;
 $header-button-background: #e47b9a;
-$header-button-hover-background: newColorInvert($header-button-background, 30%);
+$header-button-hover-background: newColorInvert($header-button-background, 20%);
 $shadow: rgba(0, 0, 0, 0.17);
 
 $mqMinWidth: 420px;
 $responsive-width: 768px;
 
-@function newColorInvert($color, $amount: 100%) {
-  $inverse: color.change($color, $hue: color.hue($color) + 180);
-  @return mix($inverse, $color, $amount);
-}
+
