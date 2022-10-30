@@ -1,0 +1,118 @@
+.section {
+  &__title{
+    padding-top: 32px;
+    font-weight: 500;
+    color: $title-color;
+    text-align: center;
+  
+    span{
+      font-weight: 300;
+    }
+  }
+  
+  &__elements{
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch;
+    justify-content: center;
+  
+    &__element{
+      width: 300px;
+      padding: 16px;
+      text-align: center;
+      background: $white;
+      border-radius: 13.2025px;
+      box-shadow: 0px 5.07788px 26.405px 5.07788px $shadow;
+    }
+  }
+  
+  &__flags{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: space-between;
+    width: 672px;
+    padding: 0;
+    margin: 0 auto;
+  
+    &__flag{
+      &__inner{
+        position: relative;
+        text-align: center;
+  
+        &__front, &__back {
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+        }
+        &__back{
+          position: absolute;
+          top: 0;
+          opacity: 0;
+        }
+  
+        &:hover, &:active{
+          .flag-front{
+            opacity: 0.5;
+          }
+            
+          .flag-back{
+            opacity: 1;
+          }
+        }
+      }
+  
+    }
+  }
+  
+  &__contacts{
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    text-align: center;
+      
+    &__contact{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      &__anchor{
+        text-decoration: none;
+      }
+      &__element{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 120px;
+        font-size: 32px;
+        color: $white;
+        background-image: url("../images/contact.png");
+        background-repeat: no-repeat;
+        background-position: 0;
+        background-size: 120px;
+      }
+    }
+      
+  }
+  
+  @media (max-width: $responsive-width) {
+    &__flags{
+      gap: 40px;
+      width: 300px;
+      font-size: 12px;
+  
+      &__flag img{
+        width: 130px; 
+      }
+    }
+  
+    &__contacts{
+      flex-direction: column;
+    }
+  }
+}

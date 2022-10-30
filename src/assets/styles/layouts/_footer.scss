@@ -1,0 +1,12 @@
+//FOOTER
+.footer {
+  margin: 3rem 0 1.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+  &__wave {
+    height: 150px; 
+    overflow: hidden;
+    fill: $wave-color;
+  }
+}
+  
