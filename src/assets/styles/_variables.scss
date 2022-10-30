@@ -20,6 +20,6 @@ $mqMinWidth: 420px;
 $responsive-width: 768px;
 
 @function newColorInvert($color, $amount: 100%) {
-  $inverse: change-color($color, $hue: hue($color) + 180);
+  $inverse: color.change($color, $hue: color.hue($color) + 180);
   @return mix($inverse, $color, $amount);
 }
